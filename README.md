@@ -1,9 +1,12 @@
 # LunarRL: Teaching an Agent to Land
 
 PPO (Stable-Baselines3) trained on Gymnasium's `LunarLander-v3`, evaluated against
-a uniform-random policy on the same held-out seeds. This folder is self-contained;
-the portfolio page `project.html?id=lunar-rl` draws its charts from files this code
-generates.
+a uniform-random policy on the same held-out seeds.
+
+**Live demo:** https://srijan-lunarrl-demo.netlify.app
+
+The `web-demo/` folder contains the standalone demo site and playable browser challenge.
+The Python files train and test the actual Gymnasium agent.
 
 ```
 lunar-rl/
