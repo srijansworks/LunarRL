@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LunarRL Demo: an AI that learned to land</title>
+<meta name="description" content="Watch a PPO agent land a rocket in Gymnasium's LunarLander, compare it to random, then try a simplified landing challenge yourself.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <span class="brand">LunarRL</span>
+  <nav aria-label="Primary">
+    <a href="#watch">Watch</a><a href="#stats">Stats</a><a href="#play">Play</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Reinforcement learning project</p>
+    <h1>I taught an AI to land a rocket.</h1>
+    <p class="lede">It started out crashing every time. After about a million practice steps in a 2D simulator, it lands between the flags almost every run. Watch it, check the numbers, then see if you can beat it.</p>
+    <div class="cta">
+      <a class="btn primary" href="#watch">Watch the landings</a>
+      <a class="btn" href="#play">Try it yourself</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="moon"></div></div>
+</section>
+
+<section id="watch" class="panel">
+  <h2>Trained vs random</h2>
+  <p class="sub">Real replays from the evaluation runs. Same simulator, very different pilots.</p>
+  <div class="switch" role="group" aria-label="Choose agent">
+    <button type="button" id="btn-ppo" aria-pressed="true">Trained Agent</button>
+    <button type="button" id="btn-random" aria-pressed="false">Random Agent</button>
+  </div>
+  <div class="video-wrap">
+    <video id="replay" controls playsinline muted loop preload="metadata" poster="assets/media/lunar-rl-ppo.jpg" aria-describedby="replay-caption">
+      <source src="assets/media/lunar-rl-ppo.mp4" type="video/mp4">
+      Your browser can't play this video.
+    </video>
+  </div>
+  <p id="replay-caption" class="caption" aria-live="polite"></p>
+</section>
+
+<section id="stats" class="panel">
+  <h2>Measured results</h2>
+  <p class="sub" id="stats-sub">100 fresh episodes per agent.</p>
+  <div class="stat-grid" id="stat-grid"></div>
+  <div class="bars" id="bars" aria-label="Episode outcomes"></div>
+  <p class="note" id="stats-note"></p>
+  <noscript><p class="note">Stats need JavaScript. Trained agent: 98 of 100 landed on the pad, 0 crashes. Random agent: 90 crashes.</p></noscript>
+</section>
+
+<section id="play" class="panel">
+  <h2>Your turn: Moon Hop</h2>
+  <p class="badge-note"><strong>Simplified browser challenge.</strong> This is my own quick physics toy, not the Gymnasium LunarLander physics and not the trained model.</p>
+  <div class="game">
+    <div class="hud" aria-live="off">
+      <span>Score <b id="h-score">0</b></span>
+      <span>Best <b id="h-best">0</b></span>
+      <span>Fuel <b id="h-fuel">100</b></span>
+      <span>Speed <b id="h-speed">0</b></span>
+    </div>
+    <canvas id="game" width="800" height="480" tabindex="0" role="img" aria-label="Lunar lander game. Use arrow keys or W A D to fly. Land gently on the green pad."></canvas>
+    <div class="overlay" id="overlay">
+      <p id="ov-title">Ready?</p>
+      <p id="ov-text">Land softly and upright on the green pad.</p>
+      <button type="button" class="btn primary" id="ov-btn">Start</button>
+    </div>
+  </div>
+  <div class="pad" aria-label="On-screen controls">
+    <button type="button" data-k="left" aria-label="Rotate left">&#8630;</button>
+    <button type="button" data-k="up" aria-label="Thrust">Thrust</button>
+    <button type="button" data-k="right" aria-label="Rotate right">&#8631;</button>
+  </div>
+  <p class="note">Controls: Up / W thrust, Left / A and Right / D rotate, R restart. Touch down under speed 40, tilted less than 12 degrees, on the pad. Score = 100 landing + fuel left + softness bonus + 50 per streak landing.</p>
+  <p class="sr-only" id="game-status" role="status" aria-live="polite"></p>
+</section>
+
+<section class="panel links">
+  <h2>Dig deeper</h2>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/srijansworks/LunarRL" rel="noopener">GitHub repo</a>
+    <a class="btn" href="https://cerulean-daffodil-607f14.netlify.app/project.html?id=lunar-rl">Full portfolio project page</a>
+  </div>
+</section>
+</main>
+<footer>Built with Gymnasium LunarLander-v3 and Stable-Baselines3 PPO.</footer>
+
+<script src="assets/data/lunarrl-results.js"></script>
+<script src="app.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
