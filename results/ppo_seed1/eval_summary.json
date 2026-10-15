@@ -1,0 +1,23 @@
+{
+  "env_id": "LunarLander-v3",
+  "run_name": "ppo_seed1",
+  "seeds": "10000..10099",
+  "success_definition": "episode return >= 200 (Gymnasium's 'solved' threshold)",
+  "ppo": {
+    "episodes": 100,
+    "mean_return": 261.59,
+    "std_return": 20.87,
+    "median_return": 264.27,
+    "min_return": 220.81,
+    "max_return": 301.96,
+    "solved_episodes": 100,
+    "landed": 100,
+    "landed_on_pad": 97,
+    "crashed": 0,
+    "out_of_bounds": 0,
+    "timeout": 0,
+    "mean_length": 334.3,
+    "mean_main_engine_frames": 161.1,
+    "mean_side_engine_frames": 26.4
+  }
+}

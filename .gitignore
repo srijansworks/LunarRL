@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Trained weights and raw training logs: large-ish and reproducible from train.py.
+models/
+runs/
+
+# Scratch output from your own experiments. results/ (the published run) stays tracked.
+results/scratch/
+.DS_Store

@@ -1,0 +1,40 @@
+{
+  "env_id": "LunarLander-v3",
+  "run_name": "ppo_baseline",
+  "seeds": "10000..10099",
+  "success_definition": "episode return >= 200 (Gymnasium's 'solved' threshold)",
+  "ppo": {
+    "episodes": 100,
+    "mean_return": 256.76,
+    "std_return": 25.85,
+    "median_return": 255.96,
+    "min_return": 108.86,
+    "max_return": 298.42,
+    "solved_episodes": 99,
+    "landed": 99,
+    "landed_on_pad": 98,
+    "crashed": 0,
+    "out_of_bounds": 0,
+    "timeout": 1,
+    "mean_length": 344.0,
+    "mean_main_engine_frames": 165.2,
+    "mean_side_engine_frames": 125.0
+  },
+  "random": {
+    "episodes": 100,
+    "mean_return": -180.52,
+    "std_return": 105.52,
+    "median_return": -141.81,
+    "min_return": -481.59,
+    "max_return": -9.4,
+    "solved_episodes": 0,
+    "landed": 0,
+    "landed_on_pad": 0,
+    "crashed": 90,
+    "out_of_bounds": 10,
+    "timeout": 0,
+    "mean_length": 91.4,
+    "mean_main_engine_frames": 23.3,
+    "mean_side_engine_frames": 45.8
+  }
+}

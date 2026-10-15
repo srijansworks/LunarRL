@@ -1,0 +1,23 @@
+{
+  "env_id": "LunarLander-v3",
+  "run_name": "exp_fuel",
+  "seeds": "10000..10099",
+  "success_definition": "episode return >= 200 (Gymnasium's 'solved' threshold)",
+  "ppo": {
+    "episodes": 100,
+    "mean_return": 258.55,
+    "std_return": 45.54,
+    "median_return": 266.69,
+    "min_return": 19.64,
+    "max_return": 301.4,
+    "solved_episodes": 95,
+    "landed": 95,
+    "landed_on_pad": 84,
+    "crashed": 2,
+    "out_of_bounds": 0,
+    "timeout": 3,
+    "mean_length": 287.7,
+    "mean_main_engine_frames": 123.1,
+    "mean_side_engine_frames": 91.4
+  }
+}
